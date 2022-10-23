@@ -6,6 +6,7 @@ import { Box } from "@mui/system";
 import { createAPIEndpoint,END_POINT } from "../../api/api";
 import ProductList from "./ProductList";
 import useForm from "../../Hooks/useForm";
+import { RestoreFromTrash } from "@mui/icons-material";
 
 
 
@@ -23,7 +24,8 @@ export default function ProductForm(props) {
                 .post(values)
                 .then(res => {
                     setValues(res.data);
-                    //setCurrentId(res.data.id);
+                    setCurrentId(res.data.id);
+                    RestoreFromTrash()
                 })
                 .catch(err => console.log(err))
         }

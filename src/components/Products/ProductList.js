@@ -7,7 +7,7 @@ import useForm from "../../Hooks/useForm";
 import { getfreshModelObject } from "./DashBoard";
 import ProductForm from "./ProductForm";
 
-export default function ProductList({ ...props }) {
+export default function ProductList({props }) {
     const [currentId, setCurrentId] = useState(0)
     const [currentItem, setCurrentItem] = useState()
     const [productItems, setProductItems] = useState([]);
@@ -19,7 +19,7 @@ export default function ProductList({ ...props }) {
                 console.log(res.data)
             })
             .catch(err => console.log(err))
-    }, [])
+    }, [productItems])
 
     useEffect(() => {
         const data = {
